@@ -1,12 +1,185 @@
 <!DOCTYPE html>
-<html>
-<head><title>SMS Alert Policy</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Alert Policy – YOLO Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #1a1a2e;
+            --paper: #f8f7f4;
+            --accent: #2d5a7b;
+            --muted: #6b7280;
+            --rule: #d4d0c8;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-rule { height: 4px; background: var(--accent); }
+
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+            width: 100%;
+        }
+
+        header a {
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        header .tagline {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        .divider {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .divider hr { border: none; border-top: 1px solid var(--rule); }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        main h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .policy p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: #374151;
+            max-width: 620px;
+        }
+
+        .policy strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .policy a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .policy a:hover { text-decoration: underline; }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            font-size: 0.8rem;
+            color: var(--muted);
+            border-top: 1px solid var(--rule);
+        }
+
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 500px) {
+            header { padding: 2rem 1.25rem 1.5rem; }
+            main { padding: 2rem 1.25rem; }
+            footer { padding: 1.5rem 1.25rem; }
+            .divider { padding: 0 1.25rem; }
+            header h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
 <body>
-<h1>SMS Alert Policy</h1>
-<p>This service sends low-volume automated operational alerts
-to pre-authorized recipients. Recipients are manually enrolled
-by the system administrator. No marketing messages are sent.
-Message frequency does not exceed a few messages per day.
-Reply STOP to opt out, or contact admin@yolo-enterprises.com.</p>
+    <div class="top-rule"></div>
+
+    <header>
+        <a href="/">
+            <h1>YOLO Enterprise</h1>
+            <p class="tagline">Software Development &amp; Industrial Automation</p>
+        </a>
+    </header>
+
+    <div class="divider"><hr></div>
+
+    <main>
+        <h2>SMS Alert Policy</h2>
+
+        <div class="policy">
+            <p>
+                YOLO Enterprise LLC operates a low-volume automated alert system 
+                that delivers operational notifications via SMS to pre-authorized recipients.
+            </p>
+
+            <p>
+                <strong>Message content:</strong> System status alerts, operational 
+                notifications, and time-sensitive administrative messages. No marketing 
+                or promotional messages are sent.
+            </p>
+
+            <p>
+                <strong>Frequency:</strong> Message volume does not exceed a few 
+                messages per day.
+            </p>
+
+            <p>
+                <strong>Enrollment:</strong> Recipients are manually enrolled by the 
+                system administrator. This service is not open to public subscription.
+            </p>
+
+            <p>
+                <strong>Opt-out:</strong> Reply <em>STOP</em> to any message to 
+                unsubscribe. You may also contact 
+                <a href="mailto:admin@yolo-enterprises.com">admin@yolo-enterprises.com</a> 
+                to be removed.
+            </p>
+
+            <p>
+                <strong>Help:</strong> Reply <em>HELP</em> for assistance, or email 
+                <a href="mailto:admin@yolo-enterprises.com">admin@yolo-enterprises.com</a>.
+            </p>
+
+            <p>
+                Message and data rates may apply. Carriers are not liable for 
+                delayed or undelivered messages.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 YOLO Enterprise LLC &nbsp;&middot;&nbsp; 
+        <a href="/">Home</a>
+    </footer>
 </body>
 </html>
