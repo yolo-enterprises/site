@@ -96,6 +96,47 @@
 
         .policy a:hover { text-decoration: underline; }
 
+        .workflow {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            max-width: 620px;
+        }
+
+        .workflow h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--ink);
+        }
+
+        .workflow ol {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .workflow li {
+            font-size: 0.9rem;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .workflow li:last-child { margin-bottom: 0; }
+
+        .confirmation-example {
+            margin-top: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: var(--paper);
+            border-left: 3px solid var(--accent);
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+
         footer {
             max-width: 800px;
             margin: 0 auto;
@@ -115,6 +156,7 @@
             footer { padding: 1.5rem 1.25rem; }
             .divider { padding: 0 1.25rem; }
             header h1 { font-size: 1.6rem; }
+            .workflow { padding: 1rem 1.25rem; }
         }
     </style>
 </head>
@@ -131,12 +173,14 @@
     <div class="divider"><hr></div>
 
     <main>
-        <h2>SMS Alert Policy</h2>
+        <h2>SMS Alert Policy &amp; Opt-In Process</h2>
 
         <div class="policy">
             <p>
                 YOLO Enterprise LLC operates a low-volume automated alert system
                 that delivers operational notifications via SMS to pre-authorized recipients.
+                This service is not open to public subscription and is limited to
+                individuals directly authorized by the system administrator.
             </p>
 
             <p>
@@ -150,15 +194,32 @@
                 messages per day.
             </p>
 
-            <p>
-                <strong>Enrollment:</strong> Recipients are manually enrolled by the
-                system administrator. Consent to receive messages is not a condition
-                of any purchase or service. This service is not open to public subscription.
-            </p>
+            <div class="workflow">
+                <h3>How recipients are enrolled (verbal consent)</h3>
+                <ol>
+                    <li>The system administrator contacts the intended recipient
+                        directly (in person or by phone) and explains the purpose,
+                        content, and expected frequency of SMS alerts.</li>
+                    <li>The recipient verbally agrees to receive automated system
+                        status messages at their mobile number. Consent is voluntary
+                        and is not a condition of any purchase or service.</li>
+                    <li>The administrator enrolls the recipient's phone number in
+                        the alert system.</li>
+                    <li>The recipient receives a confirmation SMS:
+                        <div class="confirmation-example">
+                            "YOLO Enterprise: You have been enrolled in system status
+                            alerts. Reply STOP to unsubscribe, HELP for help.
+                            Msg &amp; data rates may apply."
+                        </div>
+                    </li>
+                    <li>The recipient may opt out at any time by replying
+                        <strong>STOP</strong>.</li>
+                </ol>
+            </div>
 
             <p>
                 <strong>Opt-out:</strong> Reply <em>STOP</em> to any message to
-                unsubscribe. You may also contact
+                unsubscribe immediately. You may also contact
                 <a href="mailto:admin@yolo-enterprises.com">admin@yolo-enterprises.com</a>
                 to be removed.
             </p>
