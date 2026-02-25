@@ -1,9 +1,215 @@
 <!DOCTYPE html>
-<html>
-<head><title>YOLO Enterprise LLC</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Enterprise LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #1a1a2e;
+            --paper: #f8f7f4;
+            --accent: #2d5a7b;
+            --accent-light: #e8eff4;
+            --muted: #6b7280;
+            --rule: #d4d0c8;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-rule {
+            height: 4px;
+            background: var(--accent);
+        }
+
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+            width: 100%;
+        }
+
+        header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+
+        header .tagline {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        .divider {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        .divider hr {
+            border: none;
+            border-top: 1px solid var(--rule);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        .intro {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: var(--ink);
+            max-width: 620px;
+        }
+
+        .services {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.05rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            margin-top: 3rem;
+            padding: 1.75rem;
+            background: var(--accent-light);
+            border-radius: 6px;
+        }
+
+        .contact-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .contact-section a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+            font-size: 0.8rem;
+            color: var(--muted);
+            border-top: 1px solid var(--rule);
+        }
+
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 500px) {
+            header { padding: 2rem 1.25rem 1.5rem; }
+            main { padding: 2rem 1.25rem; }
+            footer { padding: 1.5rem 1.25rem; }
+            .divider { padding: 0 1.25rem; }
+            header h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
 <body>
-<h1>YOLO Enterprise LLC</h1>
-<p>Software development and industrial automation services.</p>
-<p><a href="mailto:admin@yolo-enterprises.com">Contact us</a></p>
+    <div class="top-rule"></div>
+
+    <header>
+        <h1>YOLO Enterprise</h1>
+        <p class="tagline">Software Development &amp; Industrial Automation</p>
+    </header>
+
+    <div class="divider"><hr></div>
+
+    <main>
+        <p class="intro">
+            We build software systems that connect industrial equipment, streamline 
+            operations, and keep critical processes running. Our focus is on reliable, 
+            maintainable solutions for organizations that can't afford downtime.
+        </p>
+
+        <div class="services">
+            <div class="service-card">
+                <h3>Industrial Automation</h3>
+                <p>Integration software for robotics and manufacturing systems, 
+                   built for 24/7 operational environments.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Applications</h3>
+                <p>Web and server applications using .NET and modern frameworks, 
+                   designed for long-term reliability.</p>
+            </div>
+            <div class="service-card">
+                <h3>Systems Integration</h3>
+                <p>Connecting legacy equipment with modern software infrastructure 
+                   across distributed sites.</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Get in touch</h2>
+            <p><a href="mailto:admin@yolo-enterprises.com">admin@yolo-enterprises.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 YOLO Enterprise LLC &nbsp;&middot;&nbsp; 
+        <a href="/sms-consent.html">SMS Policy</a>
+    </footer>
 </body>
 </html>
