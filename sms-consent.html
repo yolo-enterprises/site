@@ -96,16 +96,62 @@
 
         .policy a:hover { text-decoration: underline; }
 
-        .workflow {
+        .script-box {
             margin: 1.5rem 0;
-            padding: 1.25rem 1.5rem;
+            padding: 1.5rem;
             background: white;
             border: 1px solid var(--rule);
             border-radius: 6px;
             max-width: 620px;
         }
 
-        .workflow h3 {
+        .script-box h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        .script-line {
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .script-line:last-child { margin-bottom: 0; }
+
+        .script-label {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .script-direction {
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .confirmation-sms {
+            margin-top: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--paper);
+            border-left: 3px solid var(--accent);
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .record-keeping {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            max-width: 620px;
+        }
+
+        .record-keeping h3 {
             font-family: 'DM Sans', sans-serif;
             font-size: 0.95rem;
             font-weight: 700;
@@ -113,28 +159,23 @@
             color: var(--ink);
         }
 
-        .workflow ol {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-
-        .workflow li {
+        .record-keeping p {
             font-size: 0.9rem;
             color: #374151;
             margin-bottom: 0.5rem;
-            line-height: 1.6;
+            max-width: none;
         }
 
-        .workflow li:last-child { margin-bottom: 0; }
+        .record-keeping ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+        }
 
-        .confirmation-example {
-            margin-top: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: var(--paper);
-            border-left: 3px solid var(--accent);
-            font-size: 0.85rem;
-            color: var(--muted);
-            font-style: italic;
+        .record-keeping li {
+            font-size: 0.9rem;
+            color: #374151;
+            margin-bottom: 0.35rem;
+            line-height: 1.5;
         }
 
         footer {
@@ -156,7 +197,7 @@
             footer { padding: 1.5rem 1.25rem; }
             .divider { padding: 0 1.25rem; }
             header h1 { font-size: 1.6rem; }
-            .workflow { padding: 1rem 1.25rem; }
+            .script-box, .record-keeping { padding: 1rem 1.25rem; }
         }
     </style>
 </head>
@@ -173,7 +214,7 @@
     <div class="divider"><hr></div>
 
     <main>
-        <h2>SMS Alert Policy &amp; Opt-In Process</h2>
+        <h2>SMS Alert Policy &amp; Verbal Consent Process</h2>
 
         <div class="policy">
             <p>
@@ -194,27 +235,55 @@
                 messages per day.
             </p>
 
-            <div class="workflow">
-                <h3>How recipients are enrolled (verbal consent)</h3>
-                <ol>
-                    <li>The system administrator contacts the intended recipient
-                        directly (in person or by phone) and explains the purpose,
-                        content, and expected frequency of SMS alerts.</li>
-                    <li>The recipient verbally agrees to receive automated system
-                        status messages at their mobile number. Consent is voluntary
-                        and is not a condition of any purchase or service.</li>
-                    <li>The administrator enrolls the recipient's phone number in
-                        the alert system.</li>
-                    <li>The recipient receives a confirmation SMS:
-                        <div class="confirmation-example">
-                            "YOLO Enterprise: You have been enrolled in system status
-                            alerts. Reply STOP to unsubscribe, HELP for help.
-                            Msg &amp; data rates may apply."
-                        </div>
-                    </li>
-                    <li>The recipient may opt out at any time by replying
-                        <strong>STOP</strong>.</li>
-                </ol>
+            <div class="script-box">
+                <h3>Verbal Consent Script</h3>
+
+                <div class="script-line">
+                    <span class="script-label">Administrator:</span>
+                    "Hi [Name], I'd like to add your phone number to our automated
+                    system alert service at YOLO Enterprise. You would receive
+                    automated text messages about system status — things like server
+                    health checks and operational alerts. Message frequency will not
+                    exceed a few messages per day. Message and data rates may apply.
+                    You can opt out at any time by replying STOP to any message, or
+                    reply HELP for assistance. Consent is completely voluntary and is
+                    not required for any service. Would you like to be enrolled?"
+                </div>
+
+                <div class="script-line">
+                    <span class="script-label">Recipient:</span>
+                    <span class="script-direction">[Provides verbal agreement]</span>
+                </div>
+
+                <div class="script-line">
+                    <span class="script-label">Administrator:</span>
+                    <span class="script-direction">[Records recipient's name, phone number,
+                    date, and confirmation of verbal consent in an internal log]</span>
+                </div>
+
+                <div class="script-line">
+                    <span class="script-label">System sends confirmation SMS:</span>
+                    <div class="confirmation-sms">
+                        "YOLO Enterprise: You have been enrolled in system status
+                        alerts. Reply STOP to unsubscribe, HELP for help.
+                        Msg &amp; data rates may apply."
+                    </div>
+                </div>
+            </div>
+
+            <div class="record-keeping">
+                <h3>Consent Record-Keeping</h3>
+                <p>For each enrolled recipient, the following information is recorded
+                   and retained in an internal log:</p>
+                <ul>
+                    <li>Recipient's full name</li>
+                    <li>Mobile phone number</li>
+                    <li>Date and time verbal consent was obtained</li>
+                    <li>Name of the administrator who obtained consent</li>
+                    <li>Confirmation that the consent script was read in full</li>
+                </ul>
+                <p>Records are retained for as long as the recipient is enrolled
+                   and for a minimum of one year after opt-out or removal.</p>
             </div>
 
             <p>
